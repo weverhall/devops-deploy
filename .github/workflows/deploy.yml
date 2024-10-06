@@ -1,3 +1,4 @@
+# On GitHub push, builds an updated image and pushes that to Docker Hub
 name: Release DevOps with Docker
 
 on:
@@ -21,7 +22,5 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v6
       with:
-        context: ./express-app
-        file: ./express-app/Dockerfile
         push: true
-        tags: weverhall/express
+        tags: weverhall/express:latest
